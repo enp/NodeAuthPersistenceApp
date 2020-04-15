@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Example</title>
+		<script>
+			window.onload = async () => {
+				await fetch("/data/0", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ name: 'A' }),
+					credentials: "same-origin"
+				})
+				await fetch("/data/0", {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ status: 0 }),
+					credentials: "same-origin"
+				})
+				await fetch("/data/0", {
+					method: "GET",
+					credentials: "same-origin"
+				})
+				await fetch("/data", {
+					method: "GET",
+					credentials: "same-origin"
+				})
+				await fetch("/data?size=1&q=name:A", {
+					method: "GET",
+					credentials: "same-origin"
+				})
+				await fetch("/data/0", {
+					method: "DELETE",
+					credentials: "same-origin"
+				})
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
